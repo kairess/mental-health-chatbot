@@ -17,5 +17,5 @@ SentenceBERT [jhgan/ko-sroberta-multitask](https://huggingface.co/jhgan/ko-srobe
 - streamlit
 - streamlit-chat
 - pandas
-- sentence_transformers
+- sentence-transformers
 - scikit-learn
