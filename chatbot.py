@@ -31,6 +31,7 @@ if 'past' not in st.session_state:
 
 with st.form('form', clear_on_submit=True):
     user_input = st.text_input('당신: ', '')
+    image_input = st.file_uploader('이미지 업로드:', type=['jpg'], accept_multiple_files=False)
     submitted = st.form_submit_button('전송')
 
 if submitted and user_input:
