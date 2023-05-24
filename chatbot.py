@@ -5,14 +5,14 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 import json
 
-@st.cache(allow_output_mutation=True)
+@st.cache_data()
 def cached_model():
     model = SentenceTransformer('jhgan/ko-sroberta-multitask')
     return model
 
-@st.cache(allow_output_mutation=True)
+@st.cache_data()
 def get_dataset():
-    df = pd.read_csv('wellness_dataset.csv')
+    df = pd.read_csv('C:\\Users\\21813903\\Desktop\\chatbot2\\mental-health-chatbot\\wellness_dataset.csv')
     df['embedding'] = df['embedding'].apply(json.loads)
     return df
 
