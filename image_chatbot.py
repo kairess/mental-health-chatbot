@@ -9,15 +9,6 @@ from keras.layers import Dense, GlobalMaxPool2D, GlobalAveragePooling2D
 from keras.applications import ResNet50
 from keras.preprocessing.image import ImageDataGenerator
 
-#model = ResNet50(include_top=True,
-#                 weights="imagenet",
-#                 input_tensor=None,
-#                 input_shape=None,
-#                 pooling=None,
-#                 classes=1000)
-
-#model.summary()
-
 model = tf.keras.models.Sequential([
   tf.keras.layers.Flatten(input_shape=(224, 224)),
   tf.keras.layers.Dense(128, activation='relu'),
