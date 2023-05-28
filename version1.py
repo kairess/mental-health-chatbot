@@ -27,6 +27,7 @@ load_model = tf.keras.models.load_model("C:\\Users\\21813903\\Desktop\\chatbot2\
 image_height =224
 image_width=224
 
+#오류확인
 #model = keras.models.load_model(model.path)
 import tempfile
 from PIL import Image
