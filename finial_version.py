@@ -42,8 +42,8 @@ model = cached_model()
 wellness_df = get_dataset('C:\\Users\\21813903\\Desktop\\chatbot2\\mental-health-chatbot\\wellness_dataset.csv')
 symptom_df = get_dataset('C:\\Users\\21813903\\Desktop\\chatbot2\\mental-health-chatbot\\sysmptom_data.csv')
 
-st.header('심리상담 챗봇')
-st.markdown("[❤️빵형의 개발도상국](https://www.youtube.com/c/빵형의개발도상국)")
+st.header('건강관리 챗봇')
+st.markdown("[서울 xx병원](https://www.amc.seoul.kr/asan/healthinfo/symptom/symptomSubmain.do)")
 
 if 'generated' not in st.session_state:
     st.session_state['generated'] = []
