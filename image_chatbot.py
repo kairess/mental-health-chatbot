@@ -5,8 +5,6 @@ import matplotlib.image as mpimg
 
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 from keras.models import Sequential
-# from keras.layers import Dense, GlobalMaxPool2D, GlobalAveragePooling2D
-# from keras.applications import ResNet50
 from keras.preprocessing.image import ImageDataGenerator
 
 
@@ -21,9 +19,8 @@ model = tf.keras.models.Sequential([
   tf.keras.layers.Dense(512, activation='relu'),
   tf.keras.layers.Dense(2, activation='sigmoid')
 ])
-#model.trainable = False
-#model = Sequential([model,
-#                    Dense(2, activation='softmax')])
+
+
 
 model.summary()
 
@@ -64,7 +61,6 @@ valid_generator = valid.flow_from_directory(valid_dir,
                                                     class_mode="categorical"
                                                     )
 
-#Label 
 
 history=model.fit(train_generator, 
           epochs=55,
