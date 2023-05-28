@@ -3,19 +3,24 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
-from tensorflow import keras
+from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 from keras.models import Sequential
-from keras.layers import Dense, GlobalMaxPool2D, GlobalAveragePooling2D
-from keras.applications import ResNet50
+# from keras.layers import Dense, GlobalMaxPool2D, GlobalAveragePooling2D
+# from keras.applications import ResNet50
 from keras.preprocessing.image import ImageDataGenerator
 
-model = tf.keras.models.Sequential([
-  tf.keras.layers.Flatten(input_shape=(224, 224)),
-  tf.keras.layers.Dense(128, activation='relu'),
-  tf.keras.layers.Dropout(0.2),
-  tf.keras.layers.Dense(2, activation='softmax')
-])
 
+model = tf.keras.models.Sequential([
+  tf.keras.layers.Conv2D(16, (3,3), activation='relu', input_shape=(224, 224, 3)),
+  tf.keras.layers.MaxPooling2D(2,2),
+  tf.keras.layers.Conv2D(32, (3,3), activation='relu'),
+  tf.keras.layers.MaxPooling2D(2,2),
+  tf.keras.layers.Conv2D(64, (3,3), activation='relu'),
+  tf.keras.layers.MaxPooling2D(2,2),
+  tf.keras.layers.Flatten(),
+  tf.keras.layers.Dense(512, activation='relu'),
+  tf.keras.layers.Dense(2, activation='sigmoid')
+])
 #model.trainable = False
 #model = Sequential([model,
 #                    Dense(2, activation='softmax')])
@@ -62,7 +67,7 @@ valid_generator = valid.flow_from_directory(valid_dir,
 #Label 
 
 history=model.fit(train_generator, 
-          epochs=10,
+          epochs=55,
           validation_data=valid_generator,
           verbose=2)
 
