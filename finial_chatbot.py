@@ -78,10 +78,10 @@ if image_input is not None:
     classification = classify_image(img)
     if classification == "Burns":
         st.session_state.past.append("화상 사진")
-        st.session_state.generated.append("입력한 이미지는 화상입니다.")
+        st.session_state.generated.append("화상입니다! 흐르는 찬물에 20분이상 담가 유지하세요! 화상 부위에 바세린이나 화상 거즈(깨끗한 거즈)로 덮어주고 붕대로 감아주세요! ")
     else:
         st.session_state.past.append("동상 사진")
-        st.session_state.generated.append("입력한 이미지는 동상입니다.")
+        st.session_state.generated.append("동상입니다! 따듯한 곳으로 이동하고 동상부위를 따뜻한 물(39~42도)에 30분간 담그세요!")
 
 for i in range(len(st.session_state['past'])):
     message(st.session_state['past'][i], is_user=True, key=str(i) + '_user')
